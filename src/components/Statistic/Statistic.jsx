@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types';
 
-// import s from './Statistic.module.scss';
+import s from './Statistic.module.scss';
 // className={(s['list'], s['statistic'])}
 
 export const Statistic = ({
@@ -12,21 +12,21 @@ export const Statistic = ({
 }) => {
   return (
     <>
-      <ul>
+      <ul className={s.list}>
         <li>
-          <p>{good}</p>
+          <p>Good: {good}</p>
         </li>
         <li>
-          <p>{neutral}</p>
+          <p>Neutral: {neutral}</p>
         </li>
         <li>
-          <p>{bad}</p>
+          <p>Bad: {bad}</p>
         </li>
         <li>
-          <p>{total}</p>
+          <p>Total: {total(good, neutral, bad)}</p>
         </li>
         <li>
-          <p>{positivePercentage}</p>
+          <p>Positive feedback: {positivePercentage(good, neutral, bad)} %</p>
         </li>
       </ul>
     </>

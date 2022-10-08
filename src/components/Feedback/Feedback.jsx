@@ -1,32 +1,42 @@
-// import s from './Feedback.module.scss';
-//  className={(s['list'], s['feedback-button'])}
+import s from './Feedback.module.scss';
 
 export const FeedbackOptions = ({
   options: { feedbackGood, feedbackNeutral, feedbackBad },
 }) => {
   return (
     <>
-      <ul>
+      <ul className={s.list}>
         <li>
           <button
+            className={s.button}
             type="button"
             text="Good"
             onClick={() => feedbackGood()}
-          ></button>
+          >
+            {' '}
+            Good
+          </button>
         </li>
         <li>
           <button
+            className={s.button}
             type="button"
             text="Neutral"
             onClick={() => feedbackNeutral()}
-          ></button>
+          >
+            Neutral
+          </button>
         </li>
         <li>
           <button
+            className={s.button}
             type="button"
             text="Bad"
             onClick={() => feedbackBad()}
-          ></button>
+          >
+            {' '}
+            Bad
+          </button>
         </li>
       </ul>
     </>

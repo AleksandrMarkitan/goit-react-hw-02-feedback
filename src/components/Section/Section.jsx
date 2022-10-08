@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 
-// import s from './Section.module.scss';
-//  className={s['section']}
+import s from './Section.module.scss';
 
 export const Section = ({ children, title }) => {
   return (
-    <Section>
+    <section className={s.section}>
       {<h2>{title}</h2>}
       {children}
-    </Section>
+    </section>
   );
 };
 
