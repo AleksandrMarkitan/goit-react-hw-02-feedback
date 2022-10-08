@@ -1,8 +1,6 @@
 import s from './Feedback.module.scss';
 
-export const FeedbackOptions = ({
-  options: { feedbackGood, feedbackNeutral, feedbackBad },
-}) => {
+export const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <>
       <ul className={s.list}>
@@ -10,10 +8,9 @@ export const FeedbackOptions = ({
           <button
             className={s.button}
             type="button"
-            text="Good"
-            onClick={() => feedbackGood()}
+            text="good"
+            onClick={e => onLeaveFeedback(e)}
           >
-            {' '}
             Good
           </button>
         </li>
@@ -21,8 +18,8 @@ export const FeedbackOptions = ({
           <button
             className={s.button}
             type="button"
-            text="Neutral"
-            onClick={() => feedbackNeutral()}
+            text="neutral"
+            onClick={e => onLeaveFeedback(e)}
           >
             Neutral
           </button>
@@ -31,10 +28,9 @@ export const FeedbackOptions = ({
           <button
             className={s.button}
             type="button"
-            text="Bad"
-            onClick={() => feedbackBad()}
+            text="bad"
+            onClick={e => onLeaveFeedback(e)}
           >
-            {' '}
             Bad
           </button>
         </li>
