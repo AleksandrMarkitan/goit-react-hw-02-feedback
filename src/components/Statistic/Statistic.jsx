@@ -1,7 +1,6 @@
 // import PropTypes from 'prop-types';
 
 import s from './Statistic.module.scss';
-// className={(s['list'], s['statistic'])}
 
 export const Statistic = ({
   good,
