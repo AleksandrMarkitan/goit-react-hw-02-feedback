@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import s from './Statistic.module.scss';
 
@@ -32,9 +32,10 @@ export const Statistic = ({
   );
 };
 
-// User.propTypes = {
-//   user: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     email: PropTypes.string.isRequired, // name of the users  object  being
-//   }).isRequired,
-// };
+Statistic.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
