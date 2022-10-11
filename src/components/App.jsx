@@ -12,9 +12,9 @@ export class App extends Component {
   };
 
   onLeaveFeedback = e => {
-    const feedbackType = e.target.attributes.text.nodeValue;
+    const feedbackProp = e.target.name;
     this.setState(prevState => ({
-      [feedbackType]: Number((prevState[feedbackType] += 1)),
+      [feedbackProp]: Number((prevState[feedbackProp] += 1)),
     }));
   };
 
@@ -23,7 +23,10 @@ export class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />
+          <FeedbackOptions
+            onLeaveFeedback={this.onLeaveFeedback}
+            options={this.state}
+          />
         </Section>
         <Section title="Statistics">
           {good || neutral || bad ? (

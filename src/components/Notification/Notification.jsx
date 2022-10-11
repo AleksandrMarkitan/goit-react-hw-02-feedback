@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
+import s from './Notification.module.scss';
 
 export const Notification = ({ message }) => {
-  return (
-    <>
-      <h3>{message}</h3>
-    </>
-  );
+  return <h3 className={s.title}>{message}</h3>;
 };
 
 Notification.propTypes = {

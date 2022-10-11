@@ -1,45 +1,20 @@
 import PropTypes from 'prop-types';
+import { Button } from '../Button/Button';
 import s from './Feedback.module.scss';
 
-export const FeedbackOptions = ({ onLeaveFeedback }) => {
+export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
-    <>
-      <ul className={s.list}>
-        <li>
-          <button
-            className={s.button}
-            type="button"
-            text="good"
-            onClick={e => onLeaveFeedback(e)}
-          >
-            Good
-          </button>
+    <ul className={s.list}>
+      {[...Object.keys(options)].map(item => (
+        <li key={item}>
+          <Button name={item} onLeaveFeedback={onLeaveFeedback} />
         </li>
-        <li>
-          <button
-            className={s.button}
-            type="button"
-            text="neutral"
-            onClick={e => onLeaveFeedback(e)}
-          >
-            Neutral
-          </button>
-        </li>
-        <li>
-          <button
-            className={s.button}
-            type="button"
-            text="bad"
-            onClick={e => onLeaveFeedback(e)}
-          >
-            Bad
-          </button>
-        </li>
-      </ul>
-    </>
+      ))}
+    </ul>
   );
 };
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.object.isRequired,
 };
